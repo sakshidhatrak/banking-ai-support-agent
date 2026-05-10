@@ -1,0 +1,11 @@
+KYC FAQ
+
+KYC stands for Know Your Customer.
+
+Documents required:
+- Aadhaar card
+- PAN card
+- Passport
+- Address proof
+
+Banks use KYC to prevent fraud and money laundering.
