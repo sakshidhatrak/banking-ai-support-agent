@@ -1,4 +1,5 @@
 import logging
+import os
 
 from llm.openai_client import get_llm_response
 from agent.safety_guardrails import is_unsafe_query
@@ -25,12 +26,32 @@ logging.basicConfig(
 )
 
 # =========================================
+# ABSOLUTE PROMPT PATH
+# =========================================
+
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+
+PROMPT_PATH = os.path.join(
+    BASE_DIR,
+    "..",
+    "llm",
+    "prompt_versions",
+    "v2_safe_rag.txt"
+)
+
+# =========================================
 # LOAD PROMPT
 # =========================================
 
 def load_prompt(prompt_file):
 
-    with open(prompt_file, "r") as file:
+    with open(
+        prompt_file,
+        "r",
+        encoding="utf-8"
+    ) as file:
 
         return file.read()
 
@@ -92,7 +113,7 @@ def generate_response(user_input):
     # =====================================
 
     system_prompt = load_prompt(
-        "llm/prompt_versions/v2_safe_rag.txt"
+        PROMPT_PATH
     )
 
     # =====================================
