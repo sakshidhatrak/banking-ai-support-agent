@@ -7,10 +7,17 @@ from langchain_community.document_loaders import (
 )
 
 # =========================================
-# KNOWLEDGE BASE PATH
+# ABSOLUTE PATH FIX
 # =========================================
 
-KNOWLEDGE_BASE_PATH = "rag/knowledge_base"
+CURRENT_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+
+KNOWLEDGE_BASE_PATH = os.path.join(
+    CURRENT_DIR,
+    "knowledge_base"
+)
 
 # =========================================
 # LOAD DOCUMENTS
@@ -20,11 +27,20 @@ def load_documents():
 
     documents = []
 
-    # CREATE FOLDER IF MISSING
-    os.makedirs(
-        KNOWLEDGE_BASE_PATH,
-        exist_ok=True
+    logging.warning(
+        f"Knowledge Base Path: "
+        f"{KNOWLEDGE_BASE_PATH}"
     )
+
+    if not os.path.exists(
+        KNOWLEDGE_BASE_PATH
+    ):
+
+        logging.warning(
+            "Knowledge base folder missing."
+        )
+
+        return []
 
     for file_name in os.listdir(
         KNOWLEDGE_BASE_PATH
@@ -37,10 +53,7 @@ def load_documents():
 
         try:
 
-            # =====================================
             # TXT FILES
-            # =====================================
-
             if file_name.endswith(".txt"):
 
                 loader = TextLoader(
@@ -48,32 +61,31 @@ def load_documents():
                     encoding="utf-8"
                 )
 
-                documents.extend(
-                    loader.load()
-                )
+                docs = loader.load()
 
-            # =====================================
+                documents.extend(docs)
+
             # PDF FILES
-            # =====================================
-
             elif file_name.endswith(".pdf"):
 
                 loader = PyPDFLoader(
                     file_path
                 )
 
-                documents.extend(
-                    loader.load()
-                )
+                docs = loader.load()
+
+                documents.extend(docs)
 
         except Exception as error:
 
             logging.warning(
-                f"Failed to load "
+                f"Failed loading "
                 f"{file_name}: {error}"
             )
 
-            # SKIP BAD FILES
-            continue
+    logging.warning(
+        f"Documents Loaded: "
+        f"{len(documents)}"
+    )
 
     return documents
