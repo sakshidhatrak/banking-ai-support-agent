@@ -1,0 +1,27 @@
+[
+    {
+        "query": "Explain home loans",
+        "response": "Please provide:\n- loan amount\n- interest rate\n- loan tenure\n\nExample:\n'Calculate EMI for 500000 at 8.5 for 5 years'",
+        "feedback": "too long"
+    },
+    {
+        "query": "Explain home loans",
+        "response": "A home loan is a secured loan for buying, building, renovating, or refinancing a residential property. It requires eligibility checks, income verification, and property evaluation. If you want, I can help estimate EMI if you provide loan amount, interest rate, and tenure.",
+        "feedback": "\ttoo long"
+    },
+    {
+        "query": "Explain credit cards",
+        "response": "Credit cards require income verification.",
+        "feedback": "more detail"
+    },
+    {
+        "query": "Explain KYC process",
+        "response": "KYC requires identity proof and address proof.",
+        "feedback": "more details"
+    },
+    {
+        "query": "Explain KYC process",
+        "response": "KYC requires identity proof and address proof.",
+        "feedback": "more details"
+    }
+]

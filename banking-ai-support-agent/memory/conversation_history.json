@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "message": "Calculate EMI for 1000000 at 8 for 10 years"
+    },
+    {
+        "role": "assistant",
+        "message": "For loan amount \u20b91000000, interest rate 8.0%, and tenure 10 years:\nEstimated EMI is \u20b912132.76"
+    },
+    {
+        "role": "user",
+        "message": "What if tenure becomes 20 years?"
+    },
+    {
+        "role": "assistant",
+        "message": "For loan amount \u20b91000000, interest rate 8.0%, and tenure 20 years:\nEstimated EMI is \u20b98364.4"
+    },
+    {
+        "role": "user",
+        "message": "Explain home loans"
+    },
+    {
+        "role": "assistant",
+        "message": "Please provide:\n- loan amount\n- interest rate\n- loan tenure\n\nExample:\n'Calculate EMI for 500000 at 8.5 for 5 years'"
+    },
+    {
+        "role": "user",
+        "message": "Explain credit cards"
+    },
+    {
+        "role": "assistant",
+        "message": "Credit cards require income verification."
+    },
+    {
+        "role": "user",
+        "message": "Explain home loans"
+    },
+    {
+        "role": "assistant",
+        "message": "Please provide:\n- loan amount\n- interest rate\n- loan tenure\n\nExample:\n'Calculate EMI for 500000 at 8.5 for 5 years'"
+    },
+    {
+        "role": "user",
+        "message": "Explain home loans"
+    },
+    {
+        "role": "assistant",
+        "message": "A home loan is a secured loan for buying, building, renovating, or refinancing a residential property. It requires eligibility checks, income verification, and property evaluation. If you want, I can help estimate EMI if you provide loan amount, interest rate, and tenure."
+    },
+    {
+        "role": "user",
+        "message": "Explain credit cards"
+    },
+    {
+        "role": "assistant",
+        "message": "Credit cards require income verification."
+    },
+    {
+        "role": "user",
+        "message": "Explain business loans"
+    },
+    {
+        "role": "assistant",
+        "message": "Business loans are provided to eligible enterprises to support expansion, manage working capital, cover operational expenses, purchase machinery, and develop infrastructure. They require eligibility checks and income verification. Let me know if you want more details!"
+    }
+]
